@@ -62,6 +62,6 @@ do
   	done
 done < "$file_links_file"
 
-git add $config_directory
+git add $config_directory &> /dev/null
 
 printf "\n\n\e[36m############################################\nLinux configuration files saved succesfully\n############################################\n\e[0m"
