@@ -16,3 +16,6 @@ then
     sed -i 's/#\s*\b\(tiling_drag\)\b/\1/' $i3_config_file
 fi
 
+
+# Installing snap packages
+sudo snap install spotify &> /dev/null
