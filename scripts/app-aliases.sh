@@ -30,7 +30,7 @@ do
 				then
 					from=$user_apps_directory/$from
 				else
-					printf "\e[31mFailed to create an app alias between $from and $path because $from does not exist in app directories\e[0m"
+					printf "\e[31mFailed to create an app alias between $from and $path because $from does not exist in app directories\e[0m\n"
 					continue 2
 				fi
 			fi
