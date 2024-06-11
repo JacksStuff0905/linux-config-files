@@ -3,7 +3,6 @@
 
 Here are my linux config files
 
-#### USE THOSE COMMANDS AT YOUR OWN RISK!
 
 ### Use this command to install config files:
 
@@ -16,6 +15,9 @@ sudo rm -f master.zip && sudo rm -rf linux-config-files-master/ && printf "\n\e[
 ```bash
 sudo rm -f master.zip && sudo rm -rf linux-config-files-master/ && printf "\n\e[93mStarting config file installation (with full output)...\e[0m\n\n" && wget https://github.com/JacksStuff0905/linux-config-files/archive/master.zip && unzip master.zip && sudo rm master.zip && bash linux-config-files-master/load-config-files.sh
 ```
+
+#### *USE THOSE COMMANDS AT YOUR OWN RISK!*
+
 
 <br><br><br>
 ## Info:
