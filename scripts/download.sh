@@ -16,14 +16,18 @@ do
 	if test -f $downloads_folder/`basename $line`; then
 		printf "\e[32mFile `basename $line` already downloaded; skipping\e[0m\n"
 	else
-		printf "\e[93mDownloading file `basename $line`...\e[0m\n"
+		printf "\e[93mDownloading file `basename $line`...\e[0m "
 		if wget --timeout=20 $line &> /dev/null
 		then
-			printf "\e[32mDownload of file `basename $line` was succesfull\e[0m\n"
+			printf "\e[32mDownload was succesfull\e[0m\n"
 		else
-			printf "\e[31mDownload of file `basename $line` failed\e[0m\n"
+			printf "\e[31mDownload failed\e[0m\n"
 		fi
-		move_output=$(mv `basename $line` $downloads_folder) || printf "\e[31mMove of file `basename $line` to $downloads_folder failed - Printing output: $move_output\e[0m\n" 
+  		printf "\e[93mMoving file `basename $line` to $downloads_folder...\e[0m "
+		{
+  			move_output=$(mv `basename $line` $downloads_folder) && printf "\e[32mMove was succesfull\e[0m\n"
+     			
+     		} || printf "\e[31mMove failed - Printing output: $move_output\e[0m\n" 
 		
 	fi
 
@@ -35,8 +39,12 @@ do
 		then
 			printf "\e[32mFile $filename already unzipped; skipping\e[0m\n"
 		else
-			unzip $file -d $downloads_folder/${filename%.zip} &> /dev/null
-			printf "\e[32mUnzipped file $file\e[0m\n"
+  			printf "\e[32mUnzipping file `basename $file`...\e[0m "
+     			{
+				unzip $file -d $downloads_folder/${filename%.zip} &> /dev/null && printf "\e[32Unzipping was succesfull\e[0m\n"
+    			} || {
+       				printf "\e[31Unzipping failed\e[0m\n"
+	  		}
 		fi
 	fi
 done < $downloads_file
