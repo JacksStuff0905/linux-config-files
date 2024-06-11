@@ -15,6 +15,6 @@ echo "i3 version: $i3_version"
 
 if [[ $(printf "%s\n" "$i3_version" "4.21" | sort -V | head -n 1) != "$i3_version" ]]
 then
-    sed -i 's/#\s*\b\(tiling_drag\)\b/\1/' 
+    sed -i 's/#\s*\b\(tiling_drag\)\b/\1/' $i3_config_file
 fi
 
