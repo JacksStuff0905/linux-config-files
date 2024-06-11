@@ -38,7 +38,10 @@ do
 
 				if [ ! -f $root_apps_directory/$path ] && [ ! -f $user_apps_directory/$path ]
 				then
-					link_output=$(sudo ln -s $from $root_apps_directory/$path && printf "\e[31mSuccesfully created an app alias between $from and $path\e[0m\n")
+    					printf "\e[93mCreating an app alias (link) between $from and $path...\e[0m "
+	 				{
+						link_output=$(sudo ln -s $from $root_apps_directory/$path && printf "\e[32mCreation was succesfull\e[0m\n")
+     					} || printf "\e[31mCreation failed - Printing output: $link_output\e[0m\n"
 				else
 					printf "\e[32mApp alias called `basename $path` already exists; skipping\e[0m\n"
 				fi
