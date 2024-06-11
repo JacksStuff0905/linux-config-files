@@ -93,8 +93,12 @@ then
  	printf "\n\e[32mRemoved all downloaded configuration files\e[0m\n"
 fi
 
+
 printf "\n\n\e[93mTo finalize setup a reboot is needed. Reboot now? [y/n] \e[0m"
-read reboot_now
+while [ reboot_now != y ] && [ reboot_now != n ]
+do
+	read reboot_now
+done
 
 if [[ $reboot_now == y ]]
 then
