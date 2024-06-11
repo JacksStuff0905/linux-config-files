@@ -45,7 +45,7 @@ do
 		continue
 	fi
 	{
- 		printf "\e[93mInstalling/updating package $line...\e[0m sudo $pckg_manager $pckg_additional $pckg_install $line "
+ 		printf "\e[93mInstalling/updating package $line...\e[0m $pckg_manager $pckg_additional $pckg_install $line "
 		install_output=$(sudo $pckg_manager $pckg_additional $pckg_install $line)
 		printf "\e[32mInstall/update was succesfull\e[0m\n"
 	} || printf "\e[31mInstall/update failed - Printing output: $install_output\e[0m\n" 
