@@ -110,5 +110,5 @@ done
 
 if [[ $reboot_now == y ]]
 then
-	reboot
+	systemctl reboot
 fi
