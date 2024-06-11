@@ -46,7 +46,7 @@ do
 	fi
 	{
  		printf "\e[93mInstalling/updating package $line...\e[0m "
-		install_output=$(sudo $pckg_manager $pckg_install $line $pckg_additional)
+		install_output=$(sudo $pckg_manager $pckg_additional $pckg_install $line)
 		printf "\e[32mInstall/update was succesfull\e[0m\n"
 	} || printf "\e[31mInstall/update failed - Printing output: $install_output\e[0m\n" 
 	
@@ -62,7 +62,7 @@ do
 	fi
 	{
   		printf "\e[93mRemoving package $line...\e[0m "
-		remove_output=$(sudo $pckg_manager $pckg_remove $line $pckg_additional)
+		remove_output=$(sudo $pckg_manager $pckg_additional $pckg_remove $line)
 		printf "\e[32mRemoving was succesfull\e[0m\n"
 	} || printf "\e[31mRemoving failed - Printing output: $remove_output\e[0m\n" 
 done < $removes_file
