@@ -11,7 +11,7 @@ config_directory="$script_dir/config-files"
 
 downloads_directory="$script_dir/downloaded"
 
-file_links_file="$script_dir/links/file-links"
+file_links_file="$script_dir/actions/file-links"
 
 
 
