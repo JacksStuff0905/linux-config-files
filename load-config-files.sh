@@ -13,7 +13,9 @@ downloads_directory="$script_dir/downloaded"
 
 file_links_file="$script_dir/actions/file-links"
 
-
+# Run pre-configuration script
+bash $script_dir/scripts/pre.sh
+echo ""
 
 # Download all needed files
 bash $script_dir/scripts/download.sh
@@ -86,6 +88,10 @@ do
      		((index++))
   	done
 done < "$file_links_file"
+
+# Rune post-configuration script
+bash $script_dir/scripts/post.sh
+echo ""
 
 sudo rm -r $downloads_directory/
 
