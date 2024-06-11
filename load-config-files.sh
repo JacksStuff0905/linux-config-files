@@ -64,6 +64,7 @@ do
    				if [[ -d $config_directory/$path/`basename $to` ]]
 				then
    					printf "\e[31mNo $config_directory/$path/`basename $to` configuration folder to load\e[0m\n"
+					continue 2
 				fi
     				path=${path%/}
 				printf "\e[93mCopying folder `basename $to`...\e[0m "
@@ -71,9 +72,10 @@ do
 					sudo cp -a $config_directory/$path/`basename $to` `dirname "${to/#~\//$HOME\/}"` && printf "\e[32mCopying was succesfull\e[0m\n"
 				} || printf "\e[31mCopying failed\e[0m\n"
 			else
-   				if [[ -d $config_directory/`dirname $path`/`basename $to` ]]
+   				if [[ -f $config_directory/`dirname $path`/`basename $to` ]]
 				then
 					printf "\e[31mNo $config_directory/`dirname $path`/`basename $to` configuration file to load\e[0m\n"
+     					continue 2
 				fi
     				printf "\e[93mCopying file `basename $to`...\e[0m "
 				{
