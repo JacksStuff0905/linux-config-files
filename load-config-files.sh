@@ -85,11 +85,12 @@ source ~/.bashrc
 
 printf "\n\n\e[36m############################################\nLinux configuration files loaded succesfully\n############################################\n\e[0m"
 
-printf "\n\n\e[93mWould you like to cleanup all the downloaded configuration files? [y/n] \e[0m"
+printf "\n\n\e[93mWould you like to cleanup all the downloaded configuration files? [Y/n] \e[0m"
 read cleanup
-if [[ $cleanup == y ]]
+if ! [[ $cleanup == n ]]
 then
 	sudo rm -r $script_dir
+ 	printf "\n\e[32mRemoved all downloaded configuration files\e[0m\n"
 fi
 
 printf "\n\n\e[93mTo finalize setup a reboot is needed. Reboot now? [y/n] \e[0m"
