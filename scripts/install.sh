@@ -13,6 +13,7 @@ function determine_package_manager() {
 		if command -v $(echo $line | { read -r -a words; echo "${words[0]}"; }) &> /dev/null
 		then 
   			read -r -a words;
+     			echo ${words[0]}
   			length="${#words[@]}"
      			echo $length
 			pckg_manager=$(echo $line | { echo "${words[0]}"; })
