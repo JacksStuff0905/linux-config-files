@@ -59,6 +59,7 @@ do
      		fi
      		if [ $index == 1 ]; then
 			mkdir -p `dirname "${to/#~\//$HOME\/}"` 
+   			echo $to
 			if [[ $to == */ ]]
 			then
    				if [[ -d $config_directory/$path/`basename $to` ]]
