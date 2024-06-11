@@ -1,4 +1,4 @@
-o#!/bin/bash
+#!/bin/bash
 
 script_dir="$(dirname "$(realpath "$0")")"
 
