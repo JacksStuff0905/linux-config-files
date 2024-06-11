@@ -1,0 +1,5 @@
+# App:							# Alias:
+gnome-terminal						terminal
+thunar							files
+arandr							display-manager
+lxappearance						appearance

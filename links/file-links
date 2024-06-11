@@ -1,2 +1,21 @@
-~/.config/i3/config           i3/config
-~/.bashrc                     bashrc/.bashrc
+# use &load-only to make the link work only when loading
+# use &save-only to make the link work only when saving
+
+# Local file						# Stored file (relative to config-files/)
+
+~/.config/i3/config           				i3/config
+~/.bashrc                     				bashrc/.bashrc
+~/.bash_aliases						aliases/.bash_aliases
+
+# Fonts
+# Font-Awesome
+&load-only	~/.local/share/fonts/fa-brands-400.ttf			../downloaded/6.x/Font-Awesome-6.x/webfonts/fa-brands-400.ttf
+&load-only	~/.local/share/fonts/fa-regular-400.ttf			../downloaded/6.x/Font-Awesome-6.x/webfonts/fa-regular-400.ttf
+&load-only	~/.local/share/fonts/fa-solid-900.ttf			../downloaded/6.x/Font-Awesome-6.x/webfonts/fa-solid-900.ttf
+
+# Inter
+~/.local/share/fonts/Inter-VariableFont.ttf		fonts/Inter-VariableFont.ttf
+
+
+# Wallpapers
+~/Pictures/Wallpapers/					pictures/

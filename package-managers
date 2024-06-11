@@ -1,0 +1,3 @@
+apt-get			install			remove
+pacman			-S			-R
+zypper			install			remove
