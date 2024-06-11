@@ -34,8 +34,8 @@ determine_package_manager
 
 
 
-installs_file="$script_dir/../links/install"
-removes_file="$script_dir/../links/remove"
+installs_file="$script_dir/../actions/install"
+removes_file="$script_dir/../actions/remove"
 
 # Install packages
 while IFS= read -r line
