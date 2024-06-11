@@ -8,7 +8,7 @@ script_dir="$(dirname "$(realpath "$0")")"
 
 
 # Add tiling to i3 config if i3 version is 4.21 or higher
-i3_config_file="$script_dir/../config-files/i3/config"
+i3_config_file="$HOME/.config/i3/config"
 
 i3_version=$(i3 --version | grep -oP "(?<=\bversion\s)\S+")
 echo "i3 version: $i3_version"
