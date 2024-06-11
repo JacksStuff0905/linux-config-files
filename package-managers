@@ -1,3 +1,3 @@
-"apt-get -y"			                  install			remove
-"pacman --noconfirm"			                        -S			-R
-"zypper --non-interactive"			    install			remove
+apt-get	                      install			remove        -y
+pacman			                  -S			-R                --noconfirm
+zypper			                  install			remove        --non-interactive
