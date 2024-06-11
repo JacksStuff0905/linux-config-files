@@ -2,7 +2,7 @@
 
 script_dir="$(dirname "$(realpath "$0")")"
 
-downloads_file="$script_dir/../links/download"
+downloads_file="$script_dir/../actions/download"
 downloads_folder="$script_dir/../downloaded/"
 
 mkdir -p $downloads_folder
