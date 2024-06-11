@@ -90,6 +90,7 @@ do
 done < "$file_links_file"
 
 # Rune post-configuration script
+echo ""
 bash $script_dir/scripts/post.sh
 echo ""
 
