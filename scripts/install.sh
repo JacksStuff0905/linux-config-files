@@ -34,8 +34,8 @@ determine_package_manager
 
 
 
-installs_file=../links/install
-removes_file=../links/remove
+installs_file="$script_dir/../links/install"
+removes_file="$script_dir/../links/remove"
 
 # Install packages
 while IFS= read -r line
@@ -45,12 +45,12 @@ do
 		continue
 	fi
 	{
- 		printf "\e[93mInstalling package $line...\e[0m "
+ 		printf "\e[93mInstalling/updating package $line...\e[0m "
 		install_output=$(sudo $pckg_manager $pckg_install $line $pckg_additional)
-		printf "\e[32mSuccesfully installed/updated\e[0m\n"
-	} || printf "\e[31mInstall of package $line failed - Printing output: $install_output\e[0m\n" 
+		printf "\e[32mInstall/update was succesfull\e[0m\n"
+	} || printf "\e[31mInstall/update failed - Printing output: $install_output\e[0m\n" 
 	
-done < $script_dir/$installs_file
+done < $installs_file
 
 
 # Remove packages
@@ -63,6 +63,6 @@ do
 	{
   		printf "\e[93mRemoving package $line...\e[0m "
 		remove_output=$(sudo $pckg_manager $pckg_remove $line $pckg_additional)
-		printf "\e[32mSuccesfully removed\e[0m\n"
-	} || printf "\e[31mRemove of package $line failed - Printing output: $remove_output\e[0m\n" 
-done < $script_dir/$removes_file
+		printf "\e[32mRemoving was succesfull\e[0m\n"
+	} || printf "\e[31mRemoving failed - Printing output: $remove_output\e[0m\n" 
+done < $removes_file
