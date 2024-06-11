@@ -207,7 +207,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # Wallpapers
-set $wallpaper_directory "/home/jacek/Pictures/Wallpapers"
+set $wallpaper_directory "$HOME/Pictures/Wallpapers"
 exec_always mkdir -p $wallpaper_directory/tmp
 exec_always rm $wallpaper_directory/tmp/*
 exec_always find $wallpaper_directory/ -name "*.png" -exec mogrify -format jpg {} \;
