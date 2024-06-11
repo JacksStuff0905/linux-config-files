@@ -2,7 +2,7 @@
 
 script_dir="$(dirname "$(realpath "$0")")"
 
-app_links_file="$script_dir/../links/app-aliases"
+app_links_file="$script_dir/../actions/app-aliases"
 root_apps_directory="/usr/bin"
 user_apps_directory="$HOME/bin"
 
