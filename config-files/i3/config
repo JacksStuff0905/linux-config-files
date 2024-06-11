@@ -1,4 +1,4 @@
-
+# i3 config file (v4)
 
 set $TERMINAL terminal
 set $mod Mod4
@@ -38,7 +38,8 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+#!!! WORKS IN i3 4.21 UPWARDS !!!
+#tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
