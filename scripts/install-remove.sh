@@ -15,7 +15,6 @@ function determine_package_manager() {
   			
      			words=($line)
   			length="${#words[@]}"
-     			echo $length
 			pckg_manager=$(echo $line | { read -r -a words; echo "${words[0]}"; })
 			pckg_install=$(echo $line | { read -r -a words; echo "${words[1]}"; })
 			pckg_remove=$(echo $line | { read -r -a words; echo "${words[2]}"; })
@@ -37,6 +36,8 @@ determine_package_manager
 
 installs_file="$script_dir/../actions/install"
 removes_file="$script_dir/../actions/remove"
+
+echo a $pckg_additional
 
 # Install packages
 while IFS= read -r line
