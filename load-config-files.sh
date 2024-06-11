@@ -61,18 +61,24 @@ do
 			mkdir -p `dirname "${to/#~\//$HOME\/}"` 
 			if [[ $to == */ ]]
 			then
+   				if [[ -d $config_directory/$path/`basename $to` ]]
+				then
+   					printf "\e[31mNo $config_directory/$path/`basename $to` configuration folder to load\e[0m\n"
+				fi
+    				path=${path%/}
+				printf "\e[93mCopying folder `basename $to`...\e[0m "
 				{
-					path=${path%/}
-					sudo cp -a $config_directory/$path/`basename $to` `dirname "${to/#~\//$HOME\/}"`   && printf "\e[32mCopied folder `basename $to`\e[0m\n"
-				} || {
-					printf "\e[93mNo $config_directory/$path/`basename $to` configuration folder to load\e[0m\n"
-				}
+					sudo cp -a $config_directory/$path/`basename $to` `dirname "${to/#~\//$HOME\/}"` && printf "\e[32mCopying was succesfull\e[0m\n"
+				} || printf "\e[31mCopying failed\e[0m\n"
 			else
+   				if [[ -d $config_directory/`dirname $path`/`basename $to` ]]
+				then
+					printf "\e[31mNo $config_directory/`dirname $path`/`basename $to` configuration file to load\e[0m\n"
+				fi
+    				printf "\e[93mCopying file `basename $to`...\e[0m "
 				{
-					sudo cp $config_directory/`dirname $path`/`basename $to` "${to/#~\//$HOME\/}" && printf "\e[32mCopied file `basename $to`\e[0m\n"			
-				} || {
-					printf "\e[93mNo $config_directory/`dirname $path`/`basename $to` configuration file to load\e[0m\n"
-       				}  
+					sudo cp $config_directory/`dirname $path`/`basename $to` "${to/#~\//$HOME\/}" && printf "\e[32mCopying was succesfull\e[0m\n"			
+				} || printf "\e[31mCopying failed\e[0m\n"
 			fi
      		fi
      		((index++))
