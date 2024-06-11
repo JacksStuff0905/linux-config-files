@@ -5,7 +5,7 @@ script_dir="$(dirname "$(realpath "$0")")"
 
 config_directory="$script_dir/config-files"
 
-file_links_file="$script_dir/links/file-links"
+file_links_file="$script_dir/actions/file-links"
 
 
 
