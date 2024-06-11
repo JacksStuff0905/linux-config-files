@@ -62,15 +62,15 @@ do
    			echo "$to   $path"
 			if [[ $to == */ ]]
 			then
-   				if [[ -d $config_directory/$path/`basename $to` ]]
+       				path=${path%/}
+   				if [[ -d $config_directory/$path`/basename $to` ]]
 				then
-   					printf "\e[31mNo $config_directory/$path/`basename $to` configuration folder to load\e[0m\n"
+   					printf "\e[31mNo $config_directory/$path`/basename $to` configuration folder to load\e[0m\n"
 					continue 2
 				fi
-    				path=${path%/}
 				printf "\e[93mCopying folder `basename $to`...\e[0m "
 				{
-					sudo cp -a $config_directory/$path/`basename $to` `dirname "${to/#~\//$HOME\/}"` && printf "\e[32mCopying was succesfull\e[0m\n"
+					sudo cp -a $config_directory/$path`/basename $to` `dirname "${to/#~\//$HOME\/}"` && printf "\e[32mCopying was succesfull\e[0m\n"
 				} || printf "\e[31mCopying failed\e[0m\n"
 			else
    				if [[ -f $config_directory/`dirname $path`/`basename $to` ]]
