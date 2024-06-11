@@ -41,21 +41,22 @@ do
      		fi
      		if [ $index == 1 ]; then
        			mkdir -p "$config_directory/`dirname $path`"
-			{
-				if [[ $from == */ ]]
-				then		
-					path=${path%/}
-					sudo cp -a "${from/#~\//$HOME\/}" $config_directory/$path &> /dev/null && printf "\e[32mCopied folder `basename $from`\e[0m\n"
-					git add $config_directory/$path/`basename $from`/*
-
-				else
-					sudo cp "${from/#~\//$HOME\/}" $config_directory/`dirname $path`/`basename $from` &> /dev/null && printf "\e[32mCopied file `basename $from`\e[0m\n"
-					git add $config_directory/`dirname $path`/`basename $from`
-
-				fi
-			} || {
-				printf "\e[31mFailed to copy file `basename $from`\e[0m\n"
-			}
+			
+			if [[ $from == */ ]]
+			then		
+				path=${path%/}
+     				printf "\e[93mCopying folder `basename $from`...\e[0m "
+	  			{
+					sudo cp -a "${from/#~\//$HOME\/}" $config_directory/$path &> /dev/null && printf "\e[32mCopying was succesfull\e[0m\n"
+      				} || printf "\e[31mCopying failed\e[0m\n"
+				git add $config_directory/$path/`basename $from`/*
+			else
+    				printf "\e[93mCopying file `basename $from`...\e[0m "
+	  			{
+					sudo cp "${from/#~\//$HOME\/}" $config_directory/`dirname $path`/`basename $from` &> /dev/null && printf "\e[32mCopying was succesfull\e[0m\n"
+      				} || printf "\e[31mCopying failed\e[0m\n"
+				git add $config_directory/`dirname $path`/`basename $from`
+			fi
      		fi
      		((index++))
   	done
