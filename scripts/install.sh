@@ -12,7 +12,7 @@ function determine_package_manager() {
 	do
 		if command -v $(echo $line | { read -r -a words; echo "${words[0]}"; }) &> /dev/null
 		then 
-  			length=${#words[@]}
+  			length="${#words[*]}"
      			echo $length
 			pckg_manager=$(echo $line | { read -r -a words; echo "${words[0]}"; })
 			pckg_install=$(echo $line | { read -r -a words; echo "${words[1]}"; })
