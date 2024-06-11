@@ -11,8 +11,6 @@ script_dir="$(dirname "$(realpath "$0")")"
 i3_config_file="$HOME/.config/i3/config"
 
 i3_version=$(i3 --version | grep -oP "(?<=\bversion\s)\S+")
-echo "i3 version: $i3_version"
-
 if [[ $(printf "%s\n" "$i3_version" "4.21" | sort -V | head -n 1) != "$i3_version" ]]
 then
     sed -i 's/#\s*\b\(tiling_drag\)\b/\1/' $i3_config_file
