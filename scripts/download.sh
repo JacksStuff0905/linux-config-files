@@ -39,7 +39,7 @@ do
 		then
 			printf "\e[32mFile $filename already unzipped; skipping\e[0m\n"
 		else
-  			printf "\e[32mUnzipping file `basename $file`...\e[0m "
+  			printf "\e[93mUnzipping file `basename $file`...\e[0m "
      			{
 				unzip $file -d $downloads_folder/${filename%.zip} &> /dev/null && printf "\e[32mUnzipping was succesfull\e[0m\n"
     			} || {
