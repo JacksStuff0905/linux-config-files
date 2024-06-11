@@ -26,3 +26,6 @@ sudo rm master.zip; sudo rm -r linux-config-files-master/; printf "\n\e[93mStart
     - apt
     - pacman
     - zypper
+- Supported distros:
+    - Ubuntu + Ubuntu-based
+    - OpenSUSE
