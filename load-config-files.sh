@@ -1,4 +1,4 @@
-#!/bin/bash
+o#!/bin/bash
 
 script_dir="$(dirname "$(realpath "$0")")"
 
@@ -98,6 +98,7 @@ while [ reboot_now != y ] && [ reboot_now != n ]
 do
 	printf "\n\n\e[93mTo finalize setup a reboot is needed. Reboot now? [y/n] \e[0m"
 	read reboot_now
+	echo reboot_now
 done
 
 if [[ $reboot_now == y ]]
