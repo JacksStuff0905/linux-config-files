@@ -49,13 +49,13 @@ do
 	  			{
 					sudo cp -a "${from/#~\//$HOME\/}" $config_directory/$path &> /dev/null && printf "\e[32mCopying was succesfull\e[0m\n"
       				} || printf "\e[31mCopying failed\e[0m\n"
-				git add $config_directory/$path/`basename $from`/*
+				git add $config_directory/$path/`basename $from`/* &> /dev/null
 			else
     				printf "\e[93mCopying file `basename $from`...\e[0m "
 	  			{
 					sudo cp "${from/#~\//$HOME\/}" $config_directory/`dirname $path`/`basename $from` &> /dev/null && printf "\e[32mCopying was succesfull\e[0m\n"
       				} || printf "\e[31mCopying failed\e[0m\n"
-				git add $config_directory/`dirname $path`/`basename $from`
+				git add $config_directory/`dirname $path`/`basename $from` &> /dev/null
 			fi
      		fi
      		((index++))
