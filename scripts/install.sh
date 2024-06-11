@@ -10,11 +10,13 @@ function determine_package_manager() {
 	
 	while IFS= read -r line
 	do
+ 		length=${#line[@]}
 		if command -v $(echo $line | { read -r -a words; echo "${words[0]}"; }) &> /dev/null
 		then
 			pckg_manager=$(echo $line | { read -r -a words; echo "${words[0]}"; })
 			pckg_install=$(echo $line | { read -r -a words; echo "${words[1]}"; })
 			pckg_remove=$(echo $line | { read -r -a words; echo "${words[2]}"; })
+   			pckg_additional=$(echo $line | { read -r -a words; echo "${words[3...$length]}"; })
     			return 0
 		fi
 	done < $package_managers_file
