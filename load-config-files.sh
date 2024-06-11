@@ -20,7 +20,7 @@ bash $script_dir/scripts/download.sh
 echo ""
 
 # Install all needed packages
-bash $script_dir/scripts/install.sh
+bash $script_dir/scripts/install-remove.sh
 echo ""
 
 # Add all app links
