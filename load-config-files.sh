@@ -59,7 +59,6 @@ do
      		fi
      		if [ $index == 1 ]; then
 			mkdir -p `dirname "${to/#~\//$HOME\/}"` 
-   			echo "$to   $path"
 			if [[ $to == */ ]]
 			then
        				path=${path%/}
