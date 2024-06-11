@@ -94,9 +94,9 @@ then
 fi
 
 
-printf "\n\n\e[93mTo finalize setup a reboot is needed. Reboot now? [y/n] \e[0m"
 while [ reboot_now != y ] && [ reboot_now != n ]
 do
+	printf "\n\n\e[93mTo finalize setup a reboot is needed. Reboot now? [y/n] \e[0m"
 	read reboot_now
 done
 
