@@ -15,7 +15,6 @@ function determine_package_manager() {
   			
      			words=($line)
   			length="${#words[@]}"
-     			echo $length
 			pckg_manager=$(echo $line | { read -r -a words; echo "${words[0]}"; })
 			pckg_install=$(echo $line | { read -r -a words; echo "${words[1]}"; })
 			pckg_remove=$(echo $line | { read -r -a words; echo "${words[2]}"; })
