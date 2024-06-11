@@ -37,7 +37,6 @@ determine_package_manager
 installs_file="$script_dir/../actions/install"
 removes_file="$script_dir/../actions/remove"
 
-echo a $pckg_additional
 
 # Install packages
 while IFS= read -r line
@@ -47,7 +46,7 @@ do
 		continue
 	fi
 	{
- 		printf "\e[93mInstalling/updating package $line...\e[0m $pckg_manager $pckg_additional $pckg_install $line "
+ 		printf "\e[93mInstalling/updating package $line...\e[0m "
 		install_output=$(sudo $pckg_manager $pckg_additional $pckg_install $line)
 		printf "\e[32mInstall/update was succesfull\e[0m\n"
 	} || printf "\e[31mInstall/update failed - Printing output: $install_output\e[0m\n" 
