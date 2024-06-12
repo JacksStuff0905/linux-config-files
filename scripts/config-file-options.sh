@@ -14,4 +14,4 @@ function process_file {
 }
 
 
-find $config_folder -type f -exec  {} \;
+sudo find $config_folder -type f -exec process_file {} \;
