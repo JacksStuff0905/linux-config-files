@@ -73,6 +73,7 @@ do
 				printf "\e[93mCopying folder `basename $to`...\e[0m "
 				{
 					sudo cp -a $config_directory/$path/`basename $to` `dirname "${to/#~\//$HOME\/}"` && printf "\e[32mCopying was succesfull\e[0m\n"
+          				sudo chown -R $USER `dirname "${to/#~\//$HOME\/}"`
 				} || printf "\e[31mCopying failed\e[0m\n"
 			else
    				if ! [ -f $config_directory/`dirname $path`/`basename $to` ]
@@ -84,7 +85,8 @@ do
 				{
     					sudo cp "${to/#~\//$HOME\/}" "${to/#~\//$HOME\/}.backup" &> /dev/null
 	 				sudo rm "${to/#~\//$HOME\/}" &> /dev/null
-					sudo cp $config_directory/`dirname $path`/`basename $to` "${to/#~\//$HOME\/}" && printf "\e[32mCopying was succesfull\e[0m\n"			
+					sudo cp $config_directory/`dirname $path`/`basename $to` "${to/#~\//$HOME\/}" && printf "\e[32mCopying was succesfull\e[0m\n"
+     					sudo chown $USER "${to/#~\//$HOME\/}"
 				} || printf "\e[31mCopying failed\e[0m\n"
 			fi
      		fi
