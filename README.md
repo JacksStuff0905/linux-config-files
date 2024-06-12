@@ -6,13 +6,6 @@ Here are my linux config files.
 <br>
 
 #### Make sure wget is installed!
-#### Before installing all the config files, check if there are i3 any config errors using
-
-#### If there are, remove the i3 config file using the command below.
-```bash
-rm ~/.config/i3/config
-```
-<br>
 
 ### Use this command to install config files:
 ```bash
