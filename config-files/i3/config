@@ -199,7 +199,7 @@ bindsym $mod+r mode "resize"
 set $bg-color				#EA680B
 set $inactive-bg-color			#753C13
 set $text-color				#EEF0F2
-set $inactive-text-color		#D6D6D6
+set $inactive-text-color		#ADADAD
 set $urgent-bg-color			#FFB140
 
 set $indicator-color			$bg-color
@@ -220,6 +220,15 @@ hide_edge_borders both
 bar {
         status_command i3status
 	font pango: Inter, FontAwesom6Free, FontAwesome6Brands, FontAwesome6Solid 12 
+
+	colors {
+		background $bg-color
+	    	separator #757575
+		#                  border             background         text
+		focused_workspace  $bg-color          $bg-color          $text-color
+		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+	}
 }
 
 
