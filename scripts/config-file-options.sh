@@ -14,5 +14,5 @@ function process_file {
   echo $1
 }
 
-
+echo $config_folder
 sudo find $config_folder -type f -exec process_file {} \;
