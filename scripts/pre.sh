@@ -1,4 +1,5 @@
 #!/bin/bash
+script_dir="$(dirname "$(realpath "$0")")"
 
 ###############################################################
 # Use this file to execute commands before configuration begins
@@ -20,4 +21,4 @@ echo ""
 
 
 # Apply options to config files
-bash 
+bash $script_dir/scripts/config-file-options.sh
