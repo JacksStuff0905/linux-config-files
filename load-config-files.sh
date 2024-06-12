@@ -25,6 +25,10 @@ echo ""
 bash $script_dir/scripts/install-remove.sh
 echo ""
 
+# Install all needed snap packages
+bash $script_dir/scripts/snap-install-remove.sh
+echo ""
+
 # Add all app links
 bash $script_dir/scripts/app-aliases.sh
 echo ""
