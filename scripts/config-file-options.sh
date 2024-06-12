@@ -35,7 +35,6 @@ function process_file {
   
   grep -oP "(?<=<)[^<>]+(?=>)" $file | while read line
   do
-      i3 --version
       echo `eval " $line"`
   done
   
