@@ -34,8 +34,8 @@ done
 if [[ install_snap_pckg == y ]]
 then
 	bash $script_dir/scripts/snap-install-remove.sh
- 	echo ""
 fi
+echo ""
 
 # Add all app links
 bash $script_dir/scripts/app-aliases.sh
