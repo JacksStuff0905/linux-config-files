@@ -30,10 +30,7 @@ printf "\e[93mInstall snap packages? [Y/n] \e[0m"
 read install_snap_pckg
 if ! [[ install_snap_pckg == n ]]
 then
-	printf "\n\e[93mInstalling snap packages...\e[0m\n"
- 	{
-		bash $script_dir/scripts/snap-install-remove.sh && printf "\n\e[32mInstallation was succesfull\e[0m\n"
-	} || printf "\e[31mInstallation failed\e[0m\n"
+	bash $script_dir/scripts/snap-install-remove.sh
  	echo ""
 fi
 
