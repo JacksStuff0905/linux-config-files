@@ -200,7 +200,7 @@ set $bg-color				#EA680B
 set $inactive-bg-color			#753C13
 set $text-color				#EEF0F2
 set $inactive-text-color		#ADADAD
-set $urgent-bg-color			#FFB140
+set $urgent-bg-color			#D1A234
 
 set $indicator-color			$bg-color
 
