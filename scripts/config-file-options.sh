@@ -34,7 +34,7 @@ function process_file {
     fi
 
     grep_result=$(grep -E "^\s*\<.*\>" "$file")
-    echo "RESULT: $grep_result"
+    echo "RESULT: "
   done < $file
 }
 
