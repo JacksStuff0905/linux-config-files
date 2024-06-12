@@ -21,7 +21,7 @@ function process_file {
   fi
 
   echo "use-options enabled"
-  sed -i '^\s*<use-options>\s*$' $i3_config_file
+  sed -E -i '/^\s*<use-options>\s*$/d' $i3_config_file
 }
 
 
