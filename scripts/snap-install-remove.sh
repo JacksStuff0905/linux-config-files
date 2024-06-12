@@ -21,8 +21,9 @@ do
 	then
 		continue
 	fi
-	
- 	if snap list | grep -oP "^$trimmed(?=\s+\d)"
+
+ 	grep_result=$(snap list | grep -oP "^$trimmed(?=\s+\d)")
+ 	if [ $grep_result == $trimmed ]
    	then
     		printf "\e[32mSnap package $trimmed already installed; skipping\e[0m\n"
       		continue
