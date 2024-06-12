@@ -33,7 +33,7 @@ function process_file {
   	  continue
     fi
     echo $line
-    grep_result=$(grep -- -E "^\s*\<.*\>" $line)
+    grep_result=$(grep $line -- -E "^\s*\<.*\>")
     echo "RESULT: $grep_result"
   done < $file
 }
