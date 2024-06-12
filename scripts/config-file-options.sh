@@ -36,7 +36,7 @@ function process_file {
   
   grep -oP "(?<=<)[^<>]+(?=>)" $file | while read line
   do
-    if [ eval " $line" ]
+    if [ `$line` ]
     then 
       sed -i "s/<$line>//" "$file"
     else
