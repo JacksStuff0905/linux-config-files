@@ -15,7 +15,3 @@ if [[ $(printf "%s\n" "$i3_version" "4.21" | sort -V | head -n 1) != "$i3_versio
 then
     sed -i 's/#\s*\b\(tiling_drag\)\b/\1/' $i3_config_file
 fi
-
-
-# Installing snap packages
-sudo snap install spotify &> /dev/null
