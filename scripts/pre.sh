@@ -1,5 +1,5 @@
 #!/bin/bash
-script_dir="$(dirname "$(realpath "$0")")"
+root_dir="$(dirname "$(realpath "$0")")/../"
 
 ###############################################################
 # Use this file to execute commands before configuration begins
@@ -14,11 +14,11 @@ do
 done
 if [[ install_snap_pckg == y ]]
 then
-	bash $script_dir/scripts/snap-install-remove.sh
+	bash $root_dir/scripts/snap-install-remove.sh
 fi
 echo ""
 
 
 
 # Apply options to config files
-bash $script_dir/scripts/config-file-options.sh
+bash $root_dir/scripts/config-file-options.sh
