@@ -43,7 +43,7 @@ do
      			{
 				unzip $file -d $downloads_folder/${filename%.zip} &> /dev/null && printf "\e[32mUnzipping was succesfull\e[0m\n"
     			} || {
-       				printf "\e[31Unzipping failed\e[0m\n"
+       				printf "\e[31mUnzipping failed\e[0m\n"
 	  		}
 		fi
 	fi
