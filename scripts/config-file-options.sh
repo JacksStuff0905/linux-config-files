@@ -14,9 +14,9 @@ function version-gt {
   echo "version: $version"
   if [[ $(printf "%s\n" "$version" $2 | sort -V | head -n 1) != "$version" ]] || [ $version == $2 ]
   then
-      echo "ver valid"
       return 0
   fi
+  return 1
 }
 
 
@@ -36,7 +36,12 @@ function process_file {
   
   grep -oP "(?<=<)[^<>]+(?=>)" $file | while read line
   do
-      echo `eval " $line"`
+    if [ eval " $line" ]
+    then 
+      sed -i "s/<$line>//" "$file"
+    else
+      sed -i "s/<$line>/#/" "$file"
+    fi
   done
   
 }
