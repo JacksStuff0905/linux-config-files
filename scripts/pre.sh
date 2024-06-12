@@ -16,3 +16,8 @@ then
 	bash $script_dir/scripts/snap-install-remove.sh
 fi
 echo ""
+
+
+
+# Apply options to config files
+bash 
