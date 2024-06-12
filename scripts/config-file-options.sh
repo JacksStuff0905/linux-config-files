@@ -34,7 +34,7 @@ function process_file {
   
   grep -oP "(?<=<)[^<>]+(?=>)" $file | while read line
   do
-      eval " $line"
+      echo `eval " $line"`
   done
   
 }
