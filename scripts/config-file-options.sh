@@ -15,12 +15,13 @@ function process_file {
     return
   fi
   
-  if ! cat $file | grep -E '^\s*<use-options>\s*$'
+  if ! cat $file | grep -E '^\s*<use-options>\s*$' &> /dev/null
   then
     return
   fi
 
   echo "use-options enabled"
+  sed -i '^\s*<use-options>\s*$' $i3_config_file
 }
 
 
