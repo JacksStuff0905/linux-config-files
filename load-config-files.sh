@@ -26,7 +26,7 @@ bash $script_dir/scripts/install-remove.sh
 echo ""
 
 # Install all needed snap packages
-printf "\e[93mInstall snap packages? [Y/n] \e[0m"
+printf "\e[93mInstall snap packages? (These packages are optional and might impact performance on slow systems) [Y/n] \e[0m"
 read install_snap_pckg
 if ! [[ install_snap_pckg == n ]]
 then
