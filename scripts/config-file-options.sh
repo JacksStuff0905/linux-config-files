@@ -14,5 +14,9 @@ function process_file {
   echo $1
 }
 
-echo $config_folder
-sudo find $config_folder -type f -name "*" -exec "process_file {}" \;
+echo $
+
+find "$config_folder" -type f | while read -r file; do
+  process_file "$file"
+done
+#sudo find $config_folder -type f -name "*" -exec "process_file {}" \;
