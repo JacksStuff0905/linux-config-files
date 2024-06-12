@@ -12,8 +12,9 @@ function version-gt {
   echo "comparing $1"
   local version=$($1 --version | grep -oP "(?<=\bversion\s)\S+")
   echo "version: $version"
-  if [[ $(printf "%s\n" "$version" "4.21" | sort -V | head -n 1) != "$version" ]]
+  if [[ $(printf "%s\n" "$version" $2 | sort -V | head -n 1) != "$version" ]]
   then
+      echo "ver greater"
       return 0
   fi
 }
