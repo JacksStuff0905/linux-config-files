@@ -9,6 +9,7 @@ script_dir="$(dirname "$(realpath "$0")")"
 config_folder="$script_dir/../config-files/"
 
 function version-gt {
+  echo comparing
   version=$($1 | grep -oP "(?<=\bversion\s)\S+")
   echo "version: $version"
   if [[ $(printf "%s\n" "$version" "4.21" | sort -V | head -n 1) != "$version" ]]
