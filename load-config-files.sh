@@ -28,7 +28,7 @@ echo ""
 # Install all needed snap packages
 while [[ $install_snap_pckg != y ]] && [[ $install_snap_pckg != n ]]
 do
-	printf "\e[93mInstall snap packages? (These packages are optional and might impact performance on slow systems) [Y/n] \e[0m"
+	printf "\e[93mInstall snap packages? (These packages are optional and might impact performance on slow systems) [y/n] \e[0m"
 	read install_snap_pckg
 done
 if [[ install_snap_pckg == y ]]
