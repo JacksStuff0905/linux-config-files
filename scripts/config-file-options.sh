@@ -8,6 +8,15 @@ script_dir="$(dirname "$(realpath "$0")")"
 
 config_folder="$script_dir/../config-files/"
 
+function version-gt {
+  version=$($1 | grep -oP "(?<=\bversion\s)\S+")
+  echo $version
+  if [[ $(printf "%s\n" "$version" "4.21" | sort -V | head -n 1) != "$version" ]]
+  then
+      return 0
+  fi
+}
+
 
 function process_file {
   local file="$1"
@@ -23,7 +32,10 @@ function process_file {
   echo "use-options enabled $file"
   sed -E -i '/^\s*<use-options>\s*$/d' $file
   
-  grep -oP "(?<=<)[^<>]+(?=>)" $file
+  grep -oP "(?<=<)[^<>]+(?=>)" $file | while read line
+  do
+      echo "result: $line"
+  done
   
 }
 
