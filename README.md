@@ -22,7 +22,7 @@ grep -oP ".*ERROR: CONFIG:.*" <<< `i3 -C` &> /dev/null && printf "\e[93mFound i3
 ### In case the command does not work use this command to get the full output:
 
 ```bash
-sudo rm master.zip; sudo rm -r linux-config-files-master/; printf "\n\e[93mStarting config file installation...\e[0m\n\n"; wget https://github.com/JacksStuff0905/linux-config-files/archive/master.zip && unzip master.zip && bash linux-config-files-master/load-config-files.sh; sudo rm master.zip
+grep -oP ".*ERROR: CONFIG:.*" <<< `i3 -C` && printf "\e[93mFound i3 config error: removing i3 config file\e[0m\n" && sudo rm ~/.config/i3/config; sudo rm master.zip; sudo rm -r linux-config-files-master/; printf "\n\e[93mStarting config file installation...\e[0m\n\n"; wget https://github.com/JacksStuff0905/linux-config-files/archive/master.zip && unzip master.zip && bash linux-config-files-master/load-config-files.sh; sudo rm master.zip
 ```
 <br><br>
 
