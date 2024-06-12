@@ -8,10 +8,9 @@ script_dir="$(dirname "$(realpath "$0")")"
 
 config_folder="$script_dir/../config-files/"
 
-function version-gt {
-  echo "comparing $1"
+# Compares version A to version B and if A is greater than or equal to B returns 0, otherwise returns 1
+function version-gte {
   local version=$($1 --version | grep -oP "(?<=\bversion\s)\S+")
-  echo "version: $version"
   if [ $version == $2 ]
   then
     return 0
@@ -22,6 +21,28 @@ function version-gt {
   fi
   return 0
 }
+
+# Compares version A to version B and if A is greater than B returns 0, otherwise returns 1
+function version-gt {
+  local version=$($1 --version | grep -oP "(?<=\bversion\s)\S+")
+  if [[ $(printf "%s\n" "$version" $2 | sort -V | head -n 1) != "$version" ]]
+  then
+      return 1
+  fi
+  return 0
+}
+
+# Compares version A to version B and if A is less than or equal to B returns 0, otherwise returns 1
+function version-lse {
+  return ! version-gte
+}
+
+# Compares version A to version B and if A is less than B returns 0, otherwise returns 1
+function version-ls {
+  return ! version-gt
+}
+
+
 
 
 function process_file {
