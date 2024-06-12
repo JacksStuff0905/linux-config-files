@@ -56,7 +56,6 @@ function process_file {
     return
   fi
 
-  echo "use-options enabled $file"
   sed -E -i '/^\s*<use-options>\s*$/d' $file
   
   grep -oP "(?<=<)[^<>]+(?=>)" $file | while read line
