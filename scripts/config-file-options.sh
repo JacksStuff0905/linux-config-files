@@ -22,6 +22,20 @@ function process_file {
 
   echo "use-options enabled"
   sed -E -i '/^\s*<use-options>\s*$/d' $file
+
+  while IFS= read -r line
+  do
+    trimmed="${line#"${line%%[![:space:]]*}"}"  # Remove leading whitespace
+    trimmed="${trimmed%"${trimmed##*[![:space:]]}"}"  # Remove trailing whitespace
+ 
+    if test -z "${line// /}" || [[ $trimmed == \#* ]]
+    then
+  	  continue
+    fi
+
+    grep_result=$(cat $file | grep -E "^\s*\<.*\>")
+    echo $grep_result
+  done < $file
 }
 
 
