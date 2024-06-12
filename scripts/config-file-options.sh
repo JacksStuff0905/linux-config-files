@@ -19,6 +19,8 @@ function process_file {
   then
     return
   fi
+
+  echo "use-options enabled"
 }
 
 
