@@ -20,7 +20,7 @@ function process_file {
     return
   fi
 
-  echo "use-options enabled"
+  echo "use-options enabled $file"
   sed -E -i '/^\s*<use-options>\s*$/d' $file
   
   grep -- -E "^\s*\<([^<>]+)\>" $file
