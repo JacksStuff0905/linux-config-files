@@ -13,9 +13,6 @@ downloads_directory="$script_dir/downloaded"
 
 file_links_file="$script_dir/actions/file-links"
 
-# Run pre-configuration script
-bash $script_dir/scripts/pre.sh
-echo ""
 
 # Download all needed files
 bash $script_dir/scripts/download.sh
@@ -27,6 +24,10 @@ echo ""
 
 # Add all app links
 bash $script_dir/scripts/app-aliases.sh
+echo ""
+
+# Run pre-configuration script
+bash $script_dir/scripts/pre.sh
 echo ""
 
 # Create file-links directories
