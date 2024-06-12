@@ -10,6 +10,7 @@ config_folder="$script_dir/../config-files/"
 
 
 function process_file {
+  echo test
   echo $1
 }
 
