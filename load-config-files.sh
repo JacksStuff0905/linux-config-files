@@ -82,8 +82,8 @@ do
 				fi
     				printf "\e[93mCopying file `basename $to`...\e[0m "
 				{
-    					sudo cp "${to/#~\//$HOME\/}" "${to/#~\//$HOME\/}.backup"
-	 				sudo rm "${to/#~\//$HOME\/}"
+    					sudo cp "${to/#~\//$HOME\/}" "${to/#~\//$HOME\/}.backup" &> /dev/null
+	 				sudo rm "${to/#~\//$HOME\/}" &> /dev/null
 					sudo cp $config_directory/`dirname $path`/`basename $to` "${to/#~\//$HOME\/}" && printf "\e[32mCopying was succesfull\e[0m\n"			
 				} || printf "\e[31mCopying failed\e[0m\n"
 			fi
