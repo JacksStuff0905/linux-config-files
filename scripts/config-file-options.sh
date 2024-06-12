@@ -10,13 +10,18 @@ config_folder="$script_dir/../config-files/"
 
 
 function process_file {
-  echo test
-  echo $1
+  local file="$1"
+  if [ ! -r "$file" ]; then
+    return
+  fi
+  
+  if ! cat $file | grep -E '^\s*<use-options>\s*$'
+  then
+    return
+  fi
 }
 
-echo $
 
 find "$config_folder" -type f | while read -r file; do
   process_file "$file"
 done
-#sudo find $config_folder -type f -name "*" -exec "process_file {}" \;
