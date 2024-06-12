@@ -41,7 +41,7 @@ printf "\t\e[32mFinished installing snap packages\e[0m\n"
 
 
 # Remove packages
-printf "\t\e[93mRemoving snap packages...\e[0m\n"
+printf "\n\t\e[93mRemoving snap packages...\e[0m\n"
 
 while IFS= read -r line
 do
