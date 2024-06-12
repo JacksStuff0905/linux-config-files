@@ -20,5 +20,9 @@ echo ""
 
 
 
+# Remove the i3 config file if it has any errors
+grep -oP ".*ERROR: CONFIG:.*" <<< `i3 -C` &> /dev/null && printf "\e[93mFound i3 config error: removing i3 config file\e[0m\n" && sudo rm ~/.config/i3/config;
+
+
 # Apply options to config files
 bash $root_dir/scripts/config-file-options.sh
