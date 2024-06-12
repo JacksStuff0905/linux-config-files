@@ -15,4 +15,4 @@ function process_file {
 }
 
 echo $config_folder
-sudo find $config_folder -type f -exec "process_file {}" \;
+sudo find $config_folder -type f -name * -exec "process_file {}" \;
