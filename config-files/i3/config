@@ -198,10 +198,10 @@ bindsym $mod+r mode "resize"
 
 
 # Colors
-set $bg-color				#FFFFFF
+set $bg-color				#DADADA
 set $inactive-bg-color			#000000
 set $text-color				#000000
-set $inactive-text-color		#FFFFFF
+set $inactive-text-color		#DADADA
 set $urgent-bg-color			#EEEEEE
 
 set $indicator-color			$bg-color
