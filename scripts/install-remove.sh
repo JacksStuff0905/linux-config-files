@@ -34,36 +34,44 @@ determine_package_manager
 
 
 
-installs_file="$script_dir/../actions/install"
-removes_file="$script_dir/../actions/remove"
+installs_file="$script_dir/../actions/install-remove"
 
 
 # Install packages
 while IFS= read -r line
 do
-	if test -z "${line// /}" || [[ $line == \#* ]]
+	trimmed="${line#"${line%%[![:space:]]*}"}"  # Remove leading whitespace
+	trimmed="${trimmed%"${trimmed##*[![:space:]]}"}"  # Remove trailing whitespace
+ 
+	if test -z "${trimmed// /}" || [[ $trimmed == \#* ]]
 	then
 		continue
 	fi
-	{
- 		printf "\e[93mInstalling/updating package $line...\e[0m "
-		install_output=$(sudo $pckg_manager $pckg_additional $pckg_install $line)
-		printf "\e[32mInstall/update was succesfull\e[0m\n"
-	} || printf "\e[31mInstall/update failed - Printing output: $install_output\e[0m\n" 
+ 	if [[ "$trimmed" == "&install"* ]]
+	then
+  		# install package
+		trimmed="${trimmed#&install}"
+ 		{
+	 		printf "\e[93mInstalling/updating package $trimmed...\e[0m "
+			install_output=$(sudo $pckg_manager $pckg_additional $pckg_install $trimmed)
+			printf "\e[32mInstall/update was succesfull\e[0m\n"
+		} || printf "\e[31mInstall/update failed - Printing output: $install_output\e[0m\n"
+  		continue
+	fi
+
+
+
+ 	if [[ "$trimmed" == "&remove"* ]]
+	then
+ 		# remove package
+		trimmed="${trimmed#&remove}"
+ 		{
+	  		printf "\e[93mRemoving package $trimmed...\e[0m "
+			remove_output=$(sudo $pckg_manager $pckg_additional $pckg_remove $trimmed)
+			printf "\e[32mRemoving was succesfull\e[0m\n"
+		} || printf "\e[31mRemoving failed - Printing output: $remove_output\e[0m\n"
+  		continue
+	fi
+	
 	
 done < $installs_file
-
-
-# Remove packages
-while IFS= read -r line
-do
-	if test -z "${line// /}" || [[ $line == \#* ]]
-	then
-		continue
-	fi
-	{
-  		printf "\e[93mRemoving package $line...\e[0m "
-		remove_output=$(sudo $pckg_manager $pckg_additional $pckg_remove $line)
-		printf "\e[32mRemoving was succesfull\e[0m\n"
-	} || printf "\e[31mRemoving failed - Printing output: $remove_output\e[0m\n" 
-done < $removes_file
