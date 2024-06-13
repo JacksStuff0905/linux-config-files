@@ -12,6 +12,7 @@ do
 	printf "\e[93mInstall snap and flatpak packages? (These packages are optional and might impact performance on slow systems) [y/n] \e[0m"
 	read install_snap_pckg
 done
+echo install_snap_pckg
 if [[ install_snap_pckg == y ]]
 then
 	echo test
