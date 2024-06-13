@@ -36,7 +36,7 @@ do
 		operation_output=$(sudo flatpak -y $trimmed &> /dev/null)
   		if [[ $link == true ]]
     		then
-      			sudo ln -s "/var/lib/flatpak/exports/bin/${words[$length - 1]}" "/usr/bin/${words[1]}"
+      			sudo ln -s "/var/lib/flatpak/exports/bin/${words[$length - 1]}" "/usr/bin/${words[1]}" &> /dev/null
       		fi
 		printf "\e[32mFlatpak command was succesfull\e[0m\n"
   		
