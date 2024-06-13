@@ -27,7 +27,7 @@ do
   	if [[ "${words[0]}" == "install" ]]
    	then
     		# perform installation
-	 	if snap list | grep -oP "^${words[1]}(?=\s+\d)"
+	 	if snap list | grep -oP "^${words[1]}(?=\s+\d)" &> /dev/null
 	   	then
 	    		printf "\t\t\e[32mSnap package ${words[1]} already installed; skipping\e[0m\n"
 	      		continue
@@ -45,7 +45,7 @@ do
   	if [[ "${words[0]}" == "remove" ]]
    	then
     		# perform removing
-	 	if ! snap list | grep -oP "^${words[1]}(?=\s+\d)"
+	 	if ! snap list | grep -oP "^${words[1]}(?=\s+\d)" &> /dev/null
 	   	then
      			printf "\t\t\e[32mSnap package ${words[1]} isn't installed; skipping\e[0m\n"
 			continue
