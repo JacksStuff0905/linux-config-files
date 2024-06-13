@@ -1,0 +1,15 @@
+# Install or remove packages using &install or &remove
+&install i3
+&install dmenu
+&install thunar
+&install ranger
+&install neovim
+&install vlc
+&install arandr
+&install lxappearance
+&install feh
+&install gnome-terminal
+
+# Package managers
+&install snap
+&install flatpak
