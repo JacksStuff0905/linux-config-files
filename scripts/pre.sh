@@ -17,6 +17,8 @@ then
 	bash $root_dir/scripts/snap.sh
  	echo ""
  	bash $root_dir/scripts/flatpak.sh
+  	# Run openrgb udev install
+	sudo bash $root_dir/scripts/setup/openrgb-udev-install.sh
 fi
 echo ""
 
