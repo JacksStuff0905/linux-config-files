@@ -14,7 +14,6 @@ do
 done
 if [[ $install_snap_pckg == y ]]
 then
-	echo test
 	bash $root_dir/scripts/snap.sh
  	bash $root_dir/scripts/flatpak.sh
 fi
