@@ -26,6 +26,7 @@ do
 
       	
   	link=false
+   	echo $trimmed
  	if [[ "$trimmed" == "&link install"* ]]
  	then
 		link=true
