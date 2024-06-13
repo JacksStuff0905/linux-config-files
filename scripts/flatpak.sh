@@ -26,9 +26,10 @@ do
 
       	
   	link=false
- 	if [[ "$line" == "&link install"* ]]
+ 	if [[ "$trimmed" == "&link install"* ]]
  	then
 		link=true
+  		echo link
   		trimmed="${trimmed#&link install}"
     	fi
   	{
