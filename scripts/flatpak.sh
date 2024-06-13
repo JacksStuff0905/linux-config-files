@@ -27,11 +27,11 @@ do
       	
   	link=false
    	echo $trimmed
- 	if [[ "$trimmed" == "&link install"* ]]
+ 	if [[ "$trimmed" =~ \&link[[:space:]].*\ install=? ]]
  	then
 		link=true
   		echo link
-  		trimmed="${trimmed#&link install}"
+  		trimmed=$(echo "$input" | sed 's/&link [^ ]*\s+//')
     	fi
   	{
 	 	printf "\t\t\e[93mPerforming flatpak command $trimmed...\e[0m "
