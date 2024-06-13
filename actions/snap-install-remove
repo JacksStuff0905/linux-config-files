@@ -1,7 +1,7 @@
-# install or remove snap packages using &install or &remove
-&install spotify
-&install gimp
-&install firefox
-&install discord
-&install blender
-&install steam
+# Perform snap operations (sudo snap will be inserted before command)
+install spotify
+install gimp
+install firefox
+install discord
+install blender
+install steam
