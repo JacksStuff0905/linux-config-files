@@ -1,0 +1,4 @@
+# Perform flatpak operations (sudo flatpack will be inserted before the command)
+
+# Install flathub
+remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
