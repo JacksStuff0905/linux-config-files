@@ -26,11 +26,9 @@ do
 
       	
   	link=false
-   	echo $trimmed
  	if [[ "$trimmed" =~ \&link[[:space:]].*\ install=? ]]
  	then
 		link=true
-  		echo link
   		trimmed=$(echo "$input" | sed 's/&link [^ ]*\s+//')
     	fi
   	{
