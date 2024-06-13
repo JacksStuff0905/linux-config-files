@@ -2,3 +2,6 @@
 
 # Install flathub
 remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Install OpenRGB
+install flathub org.openrgb.OpenRGB
