@@ -24,7 +24,7 @@ do
  	
   {
 	 	printf "\t\t\e[93mPerforming flatpak command $trimmed...\e[0m "
-		operation_output=$(sudo flatpak -y $trimmed)
+		operation_output=$(sudo flatpak -y $trimmed &> /dev/null)
 		printf "\e[32mFlatpak command was succesfull\e[0m\n"
   		
 	} || printf "\e[31mFlatpak command failed - Printing output: $operation_output\e[0m\n"
