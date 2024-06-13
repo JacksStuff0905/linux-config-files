@@ -198,11 +198,11 @@ bindsym $mod+r mode "resize"
 
 
 # Colors
-set $bg-color				#DADADA
-set $inactive-bg-color			#000000
-set $text-color				#000000
-set $inactive-text-color		#DADADA
-set $urgent-bg-color			#EEEEEE
+set $bg-color				#08111c
+set $inactive-bg-color			#08111c
+set $text-color				#c87200
+set $inactive-text-color		#aeae99
+set $urgent-bg-color			#a15c00
 
 set $indicator-color			$bg-color
 
@@ -211,7 +211,7 @@ set $indicator-color			$bg-color
 client.focused			$bg-color		$bg-color		$text-color		$indicator-color
 client.unfocused		$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$indicator-color
 client.focused_inactive		$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$indicator-color
-client.urgent			$urgent-bg-color	$urgent-bg-color	$text-color		$indicator-color
+client.urgent			$urgent-bg-color	$urgent-bg-color	$inactive-bg-color	$indicator-color
 
 # Hide borders and indicator
 hide_edge_borders both
@@ -229,7 +229,7 @@ bar {
 		#                  border       	background         text
 		focused_workspace  $bg-color          	$bg-color          $text-color
 		inactive_workspace $inactive-bg-color	$inactive-bg-color $inactive-text-color
-		urgent_workspace   $bg-color   		$urgent-bg-color   $text-color
+		urgent_workspace   $bg-color   		$urgent-bg-color   $inactive-bg-color
 	}
 }
 
