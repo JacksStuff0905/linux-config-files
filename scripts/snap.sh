@@ -9,7 +9,7 @@ commands_file="$script_dir/../actions/snap"
 
 
 # Install packages
-printf "\t\e[93mInstalling snap packages...\e[0m\n"
+printf "\t\e[93mPerforming snap commands...\e[0m\n"
 
 while IFS= read -r line
 do
