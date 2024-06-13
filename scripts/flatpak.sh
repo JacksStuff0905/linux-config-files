@@ -22,7 +22,7 @@ do
 	fi
 	
  	
-  {
+  	{
 	 	printf "\t\t\e[93mPerforming flatpak command $trimmed...\e[0m "
 		operation_output=$(sudo flatpak -y $trimmed &> /dev/null)
 		printf "\e[32mFlatpak command was succesfull\e[0m\n"
