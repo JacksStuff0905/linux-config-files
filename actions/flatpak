@@ -1,8 +1,7 @@
-# Perform flatpak operations (sudo flatpack will be inserted before the command)
+# Perform flatpak operations (sudo flatpack will be inserted before the command) use &link to link the package to a specific name
 
 # Install flathub
 remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install OpenRGB
-install flathub org.openrgb.OpenRGB
-sudo ln -s /var/lib/flatpak/exports/bin/org.openrgb.OpenRGB /usr/bin/openrgb
+&link openrgb install flathub org.openrgb.OpenRGB
