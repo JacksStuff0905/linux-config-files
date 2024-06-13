@@ -17,5 +17,4 @@ i3_config_file="$HOME/.config/i3/config"
 #fi
 
 
-# Run openrgb udev install
-sudo bash $script_dir/setup/openrgb-udev-install.sh
+
