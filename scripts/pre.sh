@@ -9,12 +9,13 @@ root_dir="$(dirname "$(realpath "$0")")/../"
 # Install all needed snap packages
 while [[ $install_snap_pckg != y ]] && [[ $install_snap_pckg != n ]]
 do
-	printf "\e[93mInstall snap packages? (These packages are optional and might impact performance on slow systems) [y/n] \e[0m"
+	printf "\e[93mInstall snap and flatpak packages? (These packages are optional and might impact performance on slow systems) [y/n] \e[0m"
 	read install_snap_pckg
 done
 if [[ install_snap_pckg == y ]]
 then
-	bash $root_dir/scripts/snap-install-remove.sh
+	bash $root_dir/scripts/snap.sh
+ 	bash $root_dir/scripts/flatpak.sh
 fi
 echo ""
 
