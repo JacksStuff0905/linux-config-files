@@ -9,4 +9,7 @@ arandr
 lxappearance
 feh
 gnome-terminal
+
+# Package managers
 snap
+flatpack
