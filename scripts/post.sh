@@ -1,5 +1,5 @@
 #!/bin/bash
-script_dir="$(dirname "$(realpath "$0")")"
+root_dir="$(dirname "$(realpath "$0")")/../"
 
 ################################################################
 # Use this file to execute commands after configuration finishes
@@ -16,5 +16,8 @@ i3_config_file="$HOME/.config/i3/config"
 #    sed -i 's/#\s*\b\(tiling_drag\)\b/\1/' $i3_config_file
 #fi
 
+
+# Install themes
+bash $root_dir/downloaded/master/Everforest-GTK-Theme-master/themes/install.sh
 
 
