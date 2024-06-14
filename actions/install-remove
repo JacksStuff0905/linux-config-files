@@ -1,6 +1,6 @@
 # Install or remove packages using &install or &remove
 &install i3
-&install dmenu
+&install rofi
 &install thunar
 &install ranger
 &install neovim
