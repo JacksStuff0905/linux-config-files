@@ -3,5 +3,11 @@
 # Install flathub
 remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
+# Setup theme directories
+override --filesystem=$HOME/.themes
+override --filesystem=$HOME/.icons
+override --user --filesystem=xdg-config/gtk-4.0
+
+
 # Install OpenRGB
 &link openrgb install flathub org.openrgb.OpenRGB
