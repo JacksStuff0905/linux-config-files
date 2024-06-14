@@ -19,3 +19,8 @@
 
 # Wallpapers
 ~/Pictures/Wallpapers/					pictures/
+
+
+# Icon themes
+&load-only ~/.icons/Everforest_light/                ../downloaded/Everforest-GTK-Theme-master/icons/everforest_light/
+&load-only ~/.icons/Everforest_dark/                 ../downloaded/Everforest-GTK-Theme-master/icons/Everforest_Dark/
