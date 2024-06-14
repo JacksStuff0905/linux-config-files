@@ -1,5 +1,5 @@
 #!/bin/bash
-root_dir="$(dirname "$(realpath "$0")")/../"
+root_dir="$(dirname "$(realpath "$0")")/.."
 
 ################################################################
 # Use this file to execute commands after configuration finishes
