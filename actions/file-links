@@ -9,9 +9,9 @@
 
 # Fonts
 # Font-Awesome
-&load-only	~/.local/share/fonts/fa-brands-400.ttf			../downloaded/6.x/Font-Awesome-6.x/webfonts/fa-brands-400.ttf
-&load-only	~/.local/share/fonts/fa-regular-400.ttf			../downloaded/6.x/Font-Awesome-6.x/webfonts/fa-regular-400.ttf
-&load-only	~/.local/share/fonts/fa-solid-900.ttf			../downloaded/6.x/Font-Awesome-6.x/webfonts/fa-solid-900.ttf
+&load-only	~/.local/share/fonts/fa-brands-400.ttf			../downloaded/FontAwesome/webfonts/fa-brands-400.ttf
+&load-only	~/.local/share/fonts/fa-regular-400.ttf			../downloaded/FontAwesome/webfonts/fa-regular-400.ttf
+&load-only	~/.local/share/fonts/fa-solid-900.ttf			../downloaded/FontAwesome/webfonts/fa-solid-900.ttf
 
 # Inter
 ~/.local/share/fonts/Inter-VariableFont.ttf		fonts/Inter-VariableFont.ttf
@@ -22,5 +22,5 @@
 
 
 # Icon themes
-&load-only ~/.icons/Everforest_light/                ../downloaded/Everforest-GTK-Theme-master/icons/everforest_light/
-&load-only ~/.icons/Everforest_dark/                 ../downloaded/Everforest-GTK-Theme-master/icons/Everforest_Dark/
+&load-only ~/.icons/Everforest_light/                ../downloaded/Everforest-GTK/icons/everforest_light/
+&load-only ~/.icons/Everforest_dark/                 ../downloaded/Everforest-GTK/icons/Everforest_Dark/
