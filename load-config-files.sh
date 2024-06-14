@@ -99,8 +99,6 @@ echo ""
 bash $script_dir/scripts/post.sh
 echo ""
 
-read tmp
-
 sudo rm -r $downloads_directory/
 
 source ~/.bashrc
