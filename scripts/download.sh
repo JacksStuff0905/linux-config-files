@@ -24,7 +24,7 @@ do
 		printf "\e[32mFile $filename already downloaded; skipping\e[0m\n"
 	else
 		printf "\e[93mDownloading file $filename...\e[0m "
-		if wget --timeout=20 -O "$filename.zip" -P $downloads_folder $trimmed &> /dev/null
+		if wget --timeout=20 -O "$downloads_folder$filename.zip" $trimmed &> /dev/null
 		then
 			printf "\e[32mDownload was succesfull\e[0m\n"
 		else
