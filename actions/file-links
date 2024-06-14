@@ -23,4 +23,4 @@
 
 # Icon themes
 &load-only ~/.icons/Everforest_light/                ../downloaded/Everforest-GTK/icons/everforest_light/
-&load-only ~/.icons/Everforest_dark/                 ../downloaded/Everforest-GTK/icons/Everforest_Dark/
+&load-only ~/.icons/Everforest_dark/                 ../downloaded/Everforest-GTK/icons/Everforest-Dark/
