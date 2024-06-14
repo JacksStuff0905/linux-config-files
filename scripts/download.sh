@@ -35,15 +35,14 @@ do
 	fi
 
 	# Check if is a .zip and unzip
-	file="$downloads_folder$filename.zip"
-	if [[ "$url" == *.zip ]]; then
-		if test -d ${file%.zip}
+	if [[ "$name" == *.zip ]]; then
+		if test -d ${name%.zip}
 		then
 			printf "\e[32mFile $filename already unzipped; skipping\e[0m\n"
 		else
-  			printf "\e[93mUnzipping file `basename $file`...\e[0m "
+  			printf "\e[93mUnzipping file `basename $name`...\e[0m "
      			{
-				unzip $file -d $downloads_folder$filename &> /dev/null && printf "\e[32mUnzipping was succesfull\e[0m\n"
+				unzip $name -d ${name%.zip} &> /dev/null && printf "\e[32mUnzipping was succesfull\e[0m\n"
     			} || {
        				printf "\e[31mUnzipping failed\e[0m\n"
 	  		}
