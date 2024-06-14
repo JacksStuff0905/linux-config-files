@@ -43,6 +43,9 @@ do
   			printf "\e[93mUnzipping file `basename $name`...\e[0m "
      			{
 				unzip $name -d ${name%.zip} &> /dev/null && printf "\e[32mUnzipping was succesfull\e[0m\n"
+    				unnecessary_folder=$(find ${name%.zip} -mindepth 1 -maxdepth 1 -type d)
+				mv "$unnecessary_folder"/* ${name%.zip}
+    				rm -r "$unnecessary_folder"
     			} || {
        				printf "\e[31mUnzipping failed\e[0m\n"
 	  		}
