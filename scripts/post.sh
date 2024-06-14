@@ -18,6 +18,6 @@ i3_config_file="$HOME/.config/i3/config"
 
 
 # Install themes
-bash $root_dir/downloaded/master/Everforest-GTK-Theme-master/themes/install.sh
+bash $root_dir/downloaded/master/Everforest-GTK/themes/install.sh
 
 
