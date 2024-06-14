@@ -198,11 +198,12 @@ bindsym $mod+r mode "resize"
 
 
 # Colors
-set $bg-color				#08111c
-set $inactive-bg-color			#08111c
-set $text-color				#c87200
-set $inactive-text-color		#aeae99
-set $urgent-bg-color			#a15c00
+set $bg-color				#fbefd0
+set $inactive-bg-color			#2b3339
+set $text-color				#2b3339
+set $inactive-text-color		#fbefd0
+set $urgent-bg-color			#2b3339
+set $urgent-text-color			#d78f6f
 
 set $indicator-color			$bg-color
 
@@ -211,7 +212,7 @@ set $indicator-color			$bg-color
 client.focused			$bg-color		$bg-color		$text-color		$indicator-color
 client.unfocused		$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$indicator-color
 client.focused_inactive		$inactive-bg-color	$inactive-bg-color	$inactive-text-color	$indicator-color
-client.urgent			$urgent-bg-color	$urgent-bg-color	$inactive-bg-color	$indicator-color
+client.urgent			$urgent-bg-color	$urgent-bg-color	$urgen-text-color	$indicator-color
 
 # Hide borders and indicator
 hide_edge_borders both
