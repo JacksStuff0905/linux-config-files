@@ -7,6 +7,8 @@
 ~/.config/rofi/config.rasi            rofi/config.rasi
 ~/.bashrc                     				bashrc/.bashrc
 ~/.bash_aliases						aliases/.bash_aliases
+~/.zshrc                              zsh/.zshrc
+~/.p10k.zsh                           zsh/.p10k.zsh
 
 # Fonts
 # Font-Awesome
