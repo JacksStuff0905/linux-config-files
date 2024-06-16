@@ -7,6 +7,7 @@
 &install vlc
 &install arandr
 &install lxappearance
+&install pavucontrol
 &install feh
 &install tilix
 &install zsh
