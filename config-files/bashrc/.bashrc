@@ -119,6 +119,7 @@ fi
 
 
 # Custom
+zsh
 neofetch
 
 
