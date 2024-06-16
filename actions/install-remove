@@ -8,7 +8,7 @@
 &install arandr
 &install lxappearance
 &install feh
-&install gnome-terminal
+&install terminator
 &install zsh
 
 
