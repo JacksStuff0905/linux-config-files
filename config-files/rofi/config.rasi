@@ -3,24 +3,4 @@ configuration {
   combi-modes: [ window, drun, run ];
   font: "Inter 12";
   placeholder: "...";
-  
-
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
-}
-
-element {
-  orientation: horizontal;
-  children: [ element-text, element-icon ];
-  spacing; 5px;
-}
-
-element-test {
-  vertical-align: 0.5;
 }
