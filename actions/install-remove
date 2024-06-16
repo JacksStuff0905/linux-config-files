@@ -8,7 +8,7 @@
 &install arandr
 &install lxappearance
 &install feh
-&install terminator
+&install tilix
 &install zsh
 
 
