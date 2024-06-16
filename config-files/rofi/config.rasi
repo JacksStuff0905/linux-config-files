@@ -4,3 +4,5 @@ configuration {
   font: "Inter 12";
   placeholder: "...";
 }
+
+@theme "/usr/share/rofi/themes/sidebar.rasi"
