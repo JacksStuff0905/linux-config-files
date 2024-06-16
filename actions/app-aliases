@@ -1,5 +1,5 @@
 # App:							# Alias:
-gnome-terminal						terminal
+tilix						terminal
 thunar							files
 arandr							display-manager
 lxappearance						appearance
