@@ -17,6 +17,9 @@ i3_config_file="$HOME/.config/i3/config"
 #fi
 
 
+# Install oh-my-zsh
+yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Install themes
 bash $root_dir/downloaded/Everforest-GTK/themes/install.sh
 
