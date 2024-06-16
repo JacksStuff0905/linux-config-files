@@ -120,7 +120,5 @@ fi
 
 # Custom
 zsh
-neofetch
-
 
 
