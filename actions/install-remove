@@ -9,6 +9,8 @@
 &install lxappearance
 &install feh
 &install gnome-terminal
+&install zsh
+
 
 # Package managers
 &install snap
