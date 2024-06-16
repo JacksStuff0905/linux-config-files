@@ -9,6 +9,7 @@
 ~/.bash_aliases						aliases/.bash_aliases
 ~/.zshrc                              zsh/.zshrc
 ~/.p10k.zsh                           zsh/.p10k.zsh
+/etc/pulse/default.pa                 pulse/default.pa
 
 # Fonts
 # Font-Awesome
