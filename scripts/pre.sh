@@ -29,4 +29,4 @@ grep -oP ".*ERROR: CONFIG:.*" <<< `i3 -C` &> /dev/null && printf "\e[93mFound i3
 
 
 # Apply options to config files
-bash $root_dir/scripts/config-file-options.sh
+options $root_dir/config-files/
